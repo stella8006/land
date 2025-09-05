@@ -1,17 +1,14 @@
-// ============================================================================
-// components/Header.tsx — 상단 공통 내비
-// ============================================================================
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Star, Map, Compass, Package, BookOpen, Settings2 } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useProfile } from "@/lib/context/ProfileContext";
 
 export default function Header() {
   const pathname = usePathname();
   const { openOnboarding } = useProfile();
-  const NavBtn = ({
+  const Nav = ({
     href,
     icon: Icon,
     label,
@@ -33,15 +30,18 @@ export default function Header() {
     <header className="sticky top-0 z-40 flex items-center gap-4 px-4 py-3 bg-[#0E1B3B]/90 backdrop-blur border-b border-white/10">
       <div className="flex items-center gap-2">
         <Star className="w-5 h-5 text-[#F9C74F]" />
-        <Link href="/" className="text-xl md:text-2xl font-bold text-[#F9C74F]">
+        <Link
+          href="/compass"
+          className="text-xl md:text-2xl font-bold text-[#F9C74F]"
+        >
           AI보물섬
         </Link>
       </div>
       <nav className="ml-auto flex gap-1">
-        <NavBtn href="/map" icon={Map} label="보물지도" />
-        <NavBtn href="/compass" icon={Compass} label="나침반" />
-        <NavBtn href="/box" icon={Package} label="보물상자" />
-        <NavBtn href="/log" icon={BookOpen} label="항해일지" />
+        <Nav href="/map" icon={Map} label="보물지도" />
+        <Nav href="/compass" icon={Compass} label="나침반" />
+        <Nav href="/box" icon={Package} label="보물상자" />
+        <Nav href="/log" icon={BookOpen} label="항해일지" />
         <Button variant="ghost" className="text-white" onClick={openOnboarding}>
           <Settings2 className="w-4 h-4 mr-1" /> 프로필
         </Button>

@@ -5,7 +5,7 @@
 
 import { ReactNode } from "react";
 import { ProfileProvider } from "@/lib/context/ProfileContext";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import "./globals.css"; // Tailwind 포함 가정
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/chunks/app/_not-found/page-e72c98a130d53741.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/css/f3f2273b68030c43.css",
+      "static/chunks/712-a0dc4ca2c8a7bf6f.js",
+      "static/chunks/app/layout-a014c032888b335c.js"
+    ],
+    "/box/page": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/chunks/app/box/page-d86c4628dce84472.js"
+    ],
+    "/log/page": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/chunks/app/log/page-f43b69dbe8cfedb0.js"
+    ],
+    "/map/page": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/chunks/app/map/page-f5c1434fe34409b5.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/chunks/app/page-fc0b16f15dc005b4.js"
+    ],
+    "/compass/page": [
+      "static/chunks/webpack-1f0946b4b5afec77.js",
+      "static/chunks/fd9d1056-2d60121cfa1e0db0.js",
+      "static/chunks/23-38a2680c50693936.js",
+      "static/chunks/main-app-8bf514e74023e8f3.js",
+      "static/chunks/app/compass/page-fbc8f26dadd0dce6.js"
+    ]
+  }
+}

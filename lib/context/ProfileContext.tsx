@@ -1,15 +1,16 @@
-// ============================================================================
-// lib/context/ProfileContext.tsx — 전역 상태(프로필/저장/로그/키트 다이얼로그)
-// ============================================================================
 "use client";
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { Profile, LogEntry, KitItem } from "@/lib/types";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import type { Profile, LogEntry, KitItem } from "@/lib/types";
 import { useLocalStorageState } from "@/lib/hooks/useLocalStorageState";
 import { LS_KEYS } from "@/lib/constants";
-import OnboardingDialog from "@/components/OnboardingDialog";
-import KitDialog from "@/components/KitDialog";
 
-interface Ctx {
+type Ctx = {
   profile: Profile;
   setProfile: (p: Profile | ((p: Profile) => Profile)) => void;
   log: LogEntry[];
@@ -17,9 +18,6 @@ interface Ctx {
   clearLog: () => void;
   saved: string[];
   saveItem: (type: LogEntry["type"], refId: string, title: string) => void;
-  showOnboarding: boolean;
-  openOnboarding: () => void;
-  closeOnboarding: () => void;
   activeKit: KitItem | null;
   openKit: (k: KitItem) => void;
   closeKit: () => void;
@@ -27,9 +25,13 @@ interface Ctx {
   setKitKeyword: (v: string) => void;
   copyPrompt: (text: string) => void;
   execActiveKit: () => void;
-}
+  showOnboarding: boolean;
+  openOnboarding: () => void;
+  closeOnboarding: () => void;
+};
 
 const C = createContext<Ctx | null>(null);
+
 export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useLocalStorageState<Profile>(LS_KEYS.profile, {
     role: null,
@@ -94,7 +96,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
-  const value = useMemo<Ctx>(
+  const value = useMemo(
     () => ({
       profile,
       setProfile,
@@ -103,9 +105,6 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
       clearLog,
       saved,
       saveItem,
-      showOnboarding,
-      openOnboarding,
-      closeOnboarding,
       activeKit,
       openKit,
       closeKit,
@@ -113,18 +112,14 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
       setKitKeyword,
       copyPrompt,
       execActiveKit,
+      showOnboarding,
+      openOnboarding,
+      closeOnboarding,
     }),
-    [profile, log, saved, showOnboarding, activeKit, kitKeyword]
+    [profile, log, saved, activeKit, kitKeyword, showOnboarding]
   );
 
-  return (
-    <C.Provider value={value}>
-      {children}
-      {/* 전역 다이얼로그 */}
-      <OnboardingDialog />
-      <KitDialog />
-    </C.Provider>
-  );
+  return <C.Provider value={value}>{children}</C.Provider>;
 }
 export function useProfile() {
   const ctx = useContext(C);
