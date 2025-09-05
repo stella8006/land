@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const repo = "ai-bomulseom"; // ← 저장소 이름으로 바꾸세요
+const repo = "land" // ← 저장소 이름으로 바꾸세요
 
 module.exports = {
   output: "export",
